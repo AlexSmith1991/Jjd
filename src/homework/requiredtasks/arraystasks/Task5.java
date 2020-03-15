@@ -1,4 +1,4 @@
-package homework.requiredtasks;
+package homework.requiredtasks.arraystasks;
 
 public class Task5 {
 //Создание и заполнение двумерного массива

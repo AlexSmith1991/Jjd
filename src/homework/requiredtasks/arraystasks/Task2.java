@@ -1,4 +1,4 @@
-package homework.requiredtasks;
+package homework.requiredtasks.arraystasks;
 
 import java.util.Arrays;
 import java.util.Scanner;
