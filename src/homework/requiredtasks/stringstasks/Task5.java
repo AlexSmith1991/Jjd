@@ -1,6 +1,5 @@
 package homework.requiredtasks.stringstasks;
 
-import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
 import java.util.Scanner;
 
 public class Task5 {
