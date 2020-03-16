@@ -17,7 +17,7 @@ public class Task1 {
                     (words[0].length() % 2 == 0) &&
                     (words[1].length() % 2 == 0)){
                 System.out.println(words[0].substring(0,(words[0].length() / 2)) +
-                                    words[1].substring(0,(words[1].length() / 2)));
+                                    words[1].substring((words[1].length() / 2), words[1].length()));
                 break;
             }
         }
