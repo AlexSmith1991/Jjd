@@ -5,7 +5,7 @@ public class Student extends Human implements Learn {
     private String learningSubject;
     private int knowledgeLevel;
 
-    protected Student(String name, int age, String learningSubject) {
+    public Student(String name, int age, String learningSubject) {
         super(name, age);
         setLearningSubject(learningSubject);
         setKnowledgeLevel((int) (Math.random() * 10));

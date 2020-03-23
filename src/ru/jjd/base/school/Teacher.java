@@ -4,7 +4,7 @@ public class Teacher extends Human implements Teach {
 
     private String teachingSubject;
 
-    protected Teacher(String name, int age, String teachingSubject) {
+    public Teacher(String name, int age, String teachingSubject) {
         super(name, age);
         setTeachingSubject(teachingSubject);
     }

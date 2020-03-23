@@ -25,7 +25,7 @@ public class Human {
         }
     }
 
-    protected Human(String name, int age){
+    public Human(String name, int age){
         setName(name);
         setAge(age);
     }
