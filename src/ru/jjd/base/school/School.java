@@ -41,13 +41,21 @@ public class School {
 
     public void AddTeacher(Teacher teacher){
         if (teacher != null){
-            teachers[teachersCount++] = teacher;
+            if (teachersCount < teachers.length) {
+                teachers[teachersCount++] = teacher;
+            } else {
+                System.out.println("Максимальное количество учителей достигнуто");
+            }
         }
     }
 
     public void AddStudent(Student student){
         if (student != null){
-            students[studentsCount++] = student;
+            if (studentsCount < students.length) {
+                students[studentsCount++] = student;
+            } else {
+                System.out.println("Максимальное количество учеников достигнуто");
+            }
         }
     }
 
