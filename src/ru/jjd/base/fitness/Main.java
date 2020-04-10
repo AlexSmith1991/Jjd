@@ -26,6 +26,7 @@ public class Main {
                     break;
             }
         }
+        gym.NewDay();
         return;
     }
 }
