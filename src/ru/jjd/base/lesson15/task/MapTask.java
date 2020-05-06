@@ -1,15 +1,12 @@
 package ru.jjd.base.lesson15.task;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import ru.jjd.base.lesson13.PairContainer;
+
+import java.sql.PreparedStatement;
+import java.util.*;
 
 public class MapTask {
     public static void main(String[] args) {
-        // TODO:: написать статический метод, который приннимает на вход мапу (firstTaskMap) и город (city)
-        //  и формирует список (List) логинов, которые соответствуют переданному городу
-
         HashMap<String, String> firstTaskMap = new HashMap<>();
         firstTaskMap.put("qwe", "Тверь");
         firstTaskMap.put("asd", "Тверь");
@@ -24,9 +21,6 @@ public class MapTask {
 
 
 
-        // TODO:: дан список слов (words). Написать метод, который будет возвращать количество одинаковых слов с списке
-        //  в виде Map<String, Integer>, где String - слово и Integer - количество повторений
-
         List<String> words = new ArrayList<>();
         words.add("may");
         words.add("august");
@@ -38,18 +32,17 @@ public class MapTask {
         words.add("august");
         words.add("august");
 
-
-
-
-        // TODO:: дана мапа (customerMap).
-        //  Написать метод, который принимает на вход агрументы int from и int to и возвращает новую мапу,
-        //  в которую войдут все покупатели, возраст которых находится в диапазоне [from, to)
+        Map<String, Integer> wordsMap = countWords(words);
+        System.out.println(wordsMap);
 
         HashMap<String, Customer> customerMap = new HashMap<>();
         customerMap.put("1", new Customer("Павел", "1", 23));
         customerMap.put("2", new Customer("Олег", "2", 17));
         customerMap.put("3", new Customer("Максим", "3", 48));
         customerMap.put("4", new Customer("Евгения", "4", 67));
+
+        Map<String, Customer> customerMap1 = customerByAgeMap(customerMap, 20, 50);
+        System.out.println(customerMap1);
 
 
 
@@ -80,5 +73,29 @@ public class MapTask {
             }
         }
         return list;
+    }
+
+    private static Map<String, Integer> countWords(List<String> words){
+        Map<String, Integer> result = new TreeMap<>();
+        for (String word: words){
+            Integer count;
+            count = result.get(word);
+            if (count == null){
+                result.put(word, 1);
+            } else {
+                result.replace(word, count + 1);
+            }
+        }
+        return result;
+    }
+
+    private static Map<String, Customer> customerByAgeMap(Map<String, Customer> customerMap, int from, int to){
+        Map<String, Customer> result = new HashMap<>();
+        for (Map.Entry<String, Customer> entry: customerMap.entrySet()){
+            if (entry.getValue().getAge() >= from && entry.getValue().getAge() <= to){
+                result.put(entry.getKey(), entry.getValue());
+            }
+        }
+        return result;
     }
 }

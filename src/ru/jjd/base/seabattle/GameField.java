@@ -72,15 +72,22 @@ public class GameField {
             int nextCol = col;
             Random random = new Random();
             int direction = random.nextInt(4);
-            switch (direction){
-                case 0:
-                    
-                case 1:
+            for (int i = 0; i < 4; i++) {
+                direction = (direction + i) % 4;
+                switch (direction) {
+                    case 0:
+                        
+                        break;
+                    case 1:
 
-                case 2:
+                        break;
+                    case 2:
 
-                default:
+                        break;
+                    default:
 
+                        break;
+                }
             }
 
         }

@@ -46,7 +46,7 @@ public class TestAnnotations {
             ClassConfig classConfig = (ClassConfig) testClass.getDeclaredAnnotation(ClassConfig.class);//если бы
             //на 34 строке обозначили дженерик - тут приводить не пришлось бы, приведение -
             //чтобы можно было обращаться с аннотацией как с аннотацией класса ClassConfig, получать ее параметры и т.д.
-            System.out.println(classConfig.prefix());
+            System.out.println(classConfig.prefix() + classConfig.prefix().getClass());
             System.out.println(classConfig.version());
         }
 
